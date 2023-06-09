@@ -1,10 +1,10 @@
 # **EasyQL**
-**EasyQL** es una biblioteca de C# que simplifica la realizaci�n de consultas SQL en bases de datos.
-## **Caracter�sticas**
-- Proporciona metodos sencillos y f�ciles de usar para ejecutar consultas SQL.
-- Admite conexiones a bases de datos utilizando la autenticaci�n de Windows y autenticaci�n SQL.
+**EasyQL** es una biblioteca de C# que simplifica la realización de consultas SQL en bases de datos.
+## **Características**
+- Proporciona metodos sencillos y fáciles de usar para ejecutar consultas SQL.
+- Admite conexiones a bases de datos utilizando la autenticación de Windows y autenticación SQL.
 - Utiliza modelos para mapear las tablas de tu base de datos.
-## **Instalaci�n**
+## **Instalación**
 1. Descarga la libreria en nuget.
 ## **Uso**
 1. Importa el espacio de nombres siempre que sea necesario: 
@@ -13,23 +13,23 @@
 
 1. Conexiones
 
-EasyQL proporsiona utilidades para crear conexiones con la base de datos, para realizar una conexion con la autentificaci�n de SQL haz lo siguiente:
+EasyQL proporsiona utilidades para crear conexiones con la base de datos, para realizar una conexion con la autentificación de SQL haz lo siguiente:
 
 ```csharp
 using EasyQL;
-//A�adimos los datos de la base de datos:
+//Añadimos los datos de la base de datos:
 Conection.server = "nombre_servidor";
 Conection.dataBase = "nombre_baseDatos";
 Conection.user = "usuario";
-Conection.password = "contrase�a";
+Conection.password = "contraseña";
 
 Conection.makeConnection(Conection.connectionString());
 ```
 
-Conexi�n con autenticaci�n de windows:
+Conexión con autenticación de windows:
 ```csharp
 using EasyQL;
-//A�adimos los datos de la base de datos:
+//Añadimos los datos de la base de datos:
 Conection.server = "nombre_servidor";
 Conection.dataBase = "nombre_baseDatos";
 
@@ -37,7 +37,7 @@ Conection.makeConnection(Conection.winConectionString());
 ```
 
 
-En ambos casos podemos acceder a la conexi�n creada atraves de: Conection.Con y abrimos la conexi�n de la siguiente manera: Conection.Con.Open()
+En ambos casos podemos acceder a la conexión creada atraves de: Conection.Con y abrimos la conexión de la siguiente manera: Conection.Con.Open()
 
 1. Modelos
 
@@ -54,7 +54,7 @@ EasyQL utiliza modelos para mapear las tablas de tu base de datos, para crear un
             //Creamos un constructor con un parametro tipo SqlConnection
             public Estudiante(SqlConnection conection) : base(conection)
             {
-                //Opcionalmente podemos a�adir los campos de la tabla utilizando Fields.Add();
+                //Opcionalmente podemos añadir los campos de la tabla utilizando Fields.Add();
                 Fields.Add("nombres");
                 Fields.Add("apellidos");
                 Fields.Add("telefono");
@@ -75,42 +75,42 @@ using EasyQL;
 Estudiante estudiante = new Estudiante(Conection.Con);
 ```
 
-1. M�todos de los modelos
+1. Métodos de los modelos
 
-El modelo proporciona multiples m�todos para realizar consultas SQL a la tabla que le designamos
-##### **M�todos SELECT**
+El modelo proporciona multiples métodos para realizar consultas SQL a la tabla que le designamos
+##### **Métodos SELECT**
 Todos los metodos SELECT devuelven un objeto del tipo SqlDataReader y ocupan una lista de string con los valores que queremos de la tabla
-###### **M�todo find**
-El m�todo find devuelve un solo registro, que busca con la primary key y el valor que le pasamos como parametro
+###### **Método find**
+El método find devuelve un solo registro, que busca con la primary key y el valor que le pasamos como parametro
 
 ```csharp
-//m�todo find, pasamos un string como parametro y las lista con los valores, si se necesitan todos no se pasa ning�n parametro
+//método find, pasamos un string como parametro y las lista con los valores, si se necesitan todos no se pasa ning�n parametro
 estudiante.find("1", new List { "nombres" }); //retorna solo el nombre del estudiante
 estudiante.find("1"); //retorna todos los campos del estudiante
 ```
 
-###### **M�todo all**
-El m�todo all devuelve todos los registros de la tabla
+###### **Método all**
+El método all devuelve todos los registros de la tabla
 
 ```csharp
-//m�todo all
+//método all
 estudiante.all(); //retorna todos los campos de los estudiantes
 estudiante.all(new List { "nombres", "apellidos" }); //retorna solo el nombre y apellido de los estudiantes
 ```
 
-###### **M�todo where**
-El m�todo where busca los registros seg�n los parametros que le pasemos
+###### **Método where**
+El método where busca los registros según los parametros que le pasemos
 
 ```csharp
-//m�todo where, como primer parametro pasamos el campo a buscar, segundo pasamos el comparador y tercero el valor a comparar
+//método where, como primer parametro pasamos el campo a buscar, segundo pasamos el comparador y tercero el valor a comparar
 estudiante.where("nombres", "=", "Juan", new List { "nombres", "apellidos" }); //retorna solo el nombre y apellido del estudiante
 estudiante.where("nombres", "=", "Juan"); //retorna todos los campos del estudiante
 ```
 
-##### **M�todo INSERT**
-El m�todo insert devuelve un int con la cantidad de registros afectados
+##### **Método INSERT**
+El método insert devuelve un int con la cantidad de registros afectados
 
-Inserta en la tabla seg�n los campos que a�adimos, ocupa como parametro dos listas de strings con los valores a insertar y los campos
+Inserta en la tabla según los campos que añadimos, ocupa como parametro dos listas de strings con los valores a insertar y los campos
 
 ```csharp
 List<string> fields = new List<string>
@@ -130,26 +130,26 @@ List<string> values = new List<string>
 estudiante.insert(fields, values);
 ```
 
-##### **M�todos Delete**
+##### **Métodos Delete**
 Todos los metodos Delete devuelven un int con los registros afectados
-###### **M�todo delete**
-El m�todo delete elimina registros, busca con la primary key y el valor que le pasamos como parametro
+###### **método delete**
+El método delete elimina registros, busca con la primary key y el valor que le pasamos como parametro
 
 ```csharp
-//m�todo delete, pasamos un string como parametro
+//Método delete, pasamos un string como parametro
 estudiante.delete("1");
 ```
 
-###### **M�todo deleteWhere**
-El m�todo deleteWhere elimina registros seg�n los parametros que le pasemos
+###### **Método deleteWhere**
+El método deleteWhere elimina registros seg�n los parametros que le pasemos
 
 ```csharp
-//m�todo deleteWhere, primero pasamos el campo a buscar, segundo el comparador y tercero el valor a comparar
+//Método deleteWhere, primero pasamos el campo a buscar, segundo el comparador y tercero el valor a comparar
 estudiante.delete("nombres", "=", "Juan");
 ```
 
-##### **M�todo Update**
-El m�todo Update devuelve un int con los registros afectados
+##### **Método Update**
+El método Update devuelve un int con los registros afectados
 
 Actualiza registros, busca con la primary key y el valor que le pasamos como parametro, requiere una lista bidimensional de strings
 
@@ -167,4 +167,4 @@ estudiante.update(info, "1");
 ```
 
 ## **Contribuciones**
-Las contribuciones son bienvenidas. Si deseas mejorar o agregar nuevas caracter�sticas al proyecto, puedes realizar un fork del repositorio, realizar tus cambios en una rama y enviar un pull request.
+Las contribuciones son bienvenidas. Si deseas mejorar o agregar nuevas características al proyecto, puedes realizar un fork del repositorio, realizar tus cambios en una rama y enviar un pull request.
