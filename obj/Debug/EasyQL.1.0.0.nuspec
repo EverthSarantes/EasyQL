@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>EasyQL</id>
+    <version>1.0.0</version>
+    <title>EasyQL</title>
+    <authors>EverthSarantes</authors>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <readme>README.md</readme>
+    <description>EasyQL es una biblioteca de C# que simplifica la realización de consultas SQL en bases de datos.</description>
+    <tags>SQL</tags>
+    <dependencies>
+      <group targetFramework="net7.0">
+        <dependency id="Microsoft.Data.SqlClient" version="5.1.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\Everth\Desktop\EasyQL\bin\Debug\net7.0\EasyQL.dll" target="lib\net7.0\EasyQL.dll" />
+    <file src="C:\Users\Everth\Desktop\EasyQL\LICENSE.txt" target="\LICENSE.txt" />
+    <file src="C:\Users\Everth\Desktop\EasyQL\README.md" target="\README.md" />
+  </files>
+</package>

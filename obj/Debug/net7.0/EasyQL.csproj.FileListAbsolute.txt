@@ -1,0 +1,12 @@
+C:\Users\Everth\Desktop\EasyQL\bin\Debug\net7.0\EasyQL.deps.json
+C:\Users\Everth\Desktop\EasyQL\bin\Debug\net7.0\EasyQL.dll
+C:\Users\Everth\Desktop\EasyQL\bin\Debug\net7.0\EasyQL.pdb
+C:\Users\Everth\Desktop\EasyQL\obj\Debug\net7.0\EasyQL.csproj.AssemblyReference.cache
+C:\Users\Everth\Desktop\EasyQL\obj\Debug\net7.0\EasyQL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Everth\Desktop\EasyQL\obj\Debug\net7.0\EasyQL.AssemblyInfoInputs.cache
+C:\Users\Everth\Desktop\EasyQL\obj\Debug\net7.0\EasyQL.AssemblyInfo.cs
+C:\Users\Everth\Desktop\EasyQL\obj\Debug\net7.0\EasyQL.csproj.CoreCompileInputs.cache
+C:\Users\Everth\Desktop\EasyQL\obj\Debug\net7.0\EasyQL.dll
+C:\Users\Everth\Desktop\EasyQL\obj\Debug\net7.0\refint\EasyQL.dll
+C:\Users\Everth\Desktop\EasyQL\obj\Debug\net7.0\EasyQL.pdb
+C:\Users\Everth\Desktop\EasyQL\obj\Debug\net7.0\ref\EasyQL.dll
